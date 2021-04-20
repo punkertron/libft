@@ -1,5 +1,4 @@
 #include "libft.h"
-#include <stdio.h>
 
 static	int		ft_count_letter(const char *s, const int a, char c)
 {
