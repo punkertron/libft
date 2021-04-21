@@ -2,8 +2,8 @@
 
 void	*ft_calloc(size_t num, size_t size)
 {
-	void *res;
-	
+	void	*res;
+
 	res = malloc(num * size);
 	if (res == 0)
 		return (NULL);

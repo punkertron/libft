@@ -1,6 +1,6 @@
 #include "libft.h"
 
-char *ft_strdup(const char *src)
+char	*ft_strdup(const char *src)
 {
 	int		a;
 	char	*dest;

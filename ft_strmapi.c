@@ -4,7 +4,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	unsigned int	a;
 	char			*dest;
-	
+
 	a = 0;
 	if (!s)
 		return (NULL);

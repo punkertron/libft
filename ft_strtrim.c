@@ -1,6 +1,6 @@
 #include "libft.h"
 
-static	int		ft_check(char const s1, char const *set)
+static	int	ft_check(char const s1, char const *set)
 {
 	int	i;
 

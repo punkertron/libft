@@ -2,9 +2,9 @@
 
 static	void	ft_swap_str(char *str)
 {
-	int	l;
-	int q;
-	char c;
+	int		l;
+	int		q;
+	char	c;
 
 	l = ft_strlen(str);
 	q = -1;

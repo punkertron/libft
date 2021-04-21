@@ -18,7 +18,7 @@ static	void	ft_reverse(char *s)
 
 static	void	ft_end(char *s, int n)
 {
-	int l;
+	int	l;
 
 	l = ft_strlen(s);
 	if (n < 0)
@@ -26,10 +26,9 @@ static	void	ft_end(char *s, int n)
 		s[l] = '-';
 		s[l + 1] = '\0';
 	}
-
 }
 
-char			*ft_itoa(int n)
+char	*ft_itoa(int n)
 {
 	int				a;
 	char			*s;

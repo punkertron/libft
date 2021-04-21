@@ -13,8 +13,8 @@ char	*ft_strnstr (const char *big, const char *little, size_t len)
 	while (a < len && b[a] != '\0')
 	{
 		count = 0;
-		while (a + count < len && b[a + count] == little[count] &&
-			b[a + count] != '\0' && little[count] != '\0')
+		while (a + count < len && b[a + count] == little[count]
+			&& b[a + count] != '\0' && little[count] != '\0')
 		{
 			count++;
 			if (count == quantity)

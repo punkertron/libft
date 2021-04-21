@@ -1,14 +1,16 @@
-int		ft_atoi(const char *s)
+#include "libft.h"
+
+int	ft_atoi(const char *s)
 {
-	int i;
-	int neg;
-	int res;
+	int	i;
+	int	neg;
+	int	res;
 
 	i = 0;
 	neg = 1;
 	res = 0;
 	while (s[i] && (s[i] == '\t' || s[i] == '\n' || s[i] == ' '
-		|| s[i] == '\v' || s[i] == '\r' || s[i] == '\f'))
+			|| s[i] == '\v' || s[i] == '\r' || s[i] == '\f'))
 		i++;
 	if (s[i] == '-')
 	{

@@ -1,9 +1,9 @@
 #include "libft.h"
 
-static	int		ft_count_letter(const char *s, const int a, char c)
+static	int	ft_count_letter(const char *s, const int a, char c)
 {
 	int	count;
-	int l;
+	int	l;
 
 	count = 0;
 	l = a;
@@ -15,10 +15,10 @@ static	int		ft_count_letter(const char *s, const int a, char c)
 	return (count);
 }
 
-static	int		ft_count_word(char const *s, char c)
+static	int	ft_count_word(char const *s, char c)
 {
-	int count;
-	int i;	
+	int	count;
+	int	i;	
 
 	i = 0;
 	count = 0;
@@ -33,7 +33,7 @@ static	int		ft_count_word(char const *s, char c)
 
 static	int	ft_equal(char *b, const char *s, int a, char c)
 {
-	int l;
+	int	l;
 
 	l = 0;
 	while (s[a] && s[a] != c)
@@ -53,7 +53,7 @@ char	**ft_split(char const *s, char c)
 		return (NULL);
 	a = 0;
 	i = 0;
-	while(s[a] != '\0' )
+	while (s[a] != '\0')
 	{
 		if (s[a] != c)
 		{
