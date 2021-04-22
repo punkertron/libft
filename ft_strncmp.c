@@ -9,7 +9,7 @@ int	ft_strncmp(const char *str1, const char *str2, size_t n)
 	{
 		if (str1[a] != str2[a] || str1[a] == '\0'
 			|| str2[a] == '\0')
-			return (str1[a] - str2[a]);
+			return ((unsigned char)str1[a] - (unsigned char)str2[a]);
 		a++;
 	}
 	return (0);

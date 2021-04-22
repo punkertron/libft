@@ -59,11 +59,13 @@ char	**ft_split(char const *s, char c)
 		{
 			b[i] = malloc(sizeof(char *) * (ft_count_letter(s, a, c) + 1));
 			if (b[i] == 0)
+			{
+				free (b);
 				return (NULL);
+			}
 			a = ft_equal(b[i++], s, a, c);
+			continue ;
 		}
-		if (s[a] == '\0')
-			break ;
 		a++;
 	}
 	b[i] = NULL;

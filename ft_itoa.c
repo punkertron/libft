@@ -1,5 +1,25 @@
 #include "libft.h"
 
+static	int		ft_count(int n)
+{
+	int				count;
+	long long int	l;
+
+	l = (long long int) n;
+	count = 0;
+	if (n <= 0)
+	{
+		count++;
+		l = -l;
+	}
+	while (l != 0)
+	{
+		count++;
+		l = l / 10;
+	}
+	return (count);
+}
+
 static	void	ft_reverse(char *s)
 {
 	int		a;
@@ -34,7 +54,7 @@ char	*ft_itoa(int n)
 	char			*s;
 	long long int	q;
 
-	s = (char *) malloc(12);
+	s = malloc(sizeof(s) * (ft_count(n) + 1));
 	if (s == 0)
 		return (NULL);
 	q = n;
