@@ -4,6 +4,14 @@
 # include <unistd.h>
 # include <stdlib.h>
 
+typedef	struct		s_list
+{
+	void			*content;
+	struct s_list	*next;
+}					t_list;
+
+t_list	*ft_lstnew(void *content);
+
 void	ft_bzero(void *s, size_t n);
 void	*ft_memccpy(void *dest, const void *src, int c, size_t n);
 void	*ft_memcpy (void *dest, const void *src, size_t n);

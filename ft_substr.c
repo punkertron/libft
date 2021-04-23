@@ -10,7 +10,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		return (NULL);
 	if (ft_strlen(s) < start)
 		return (ft_strdup(""));
-	dest = malloc(len * sizeof(char *) + 1);
+	dest = malloc(sizeof(char) * (len + 1));
 	if (dest == 0)
 		return (NULL);
 	while (s[a] && a < len)

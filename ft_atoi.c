@@ -1,6 +1,29 @@
 #include "libft.h"
 
-int	ft_atoi(const char *s)
+static	int	ft_check_sym(char c)
+{
+	if (c == '\t' || c == '\n' || c == ' '
+		|| c == '\v' || c == '\r' || c == '\f')
+		return (1);
+	return (0);
+}
+
+static	int	ft_check_size(const char *s)
+{
+	int	size;
+
+	size = 0;
+	while (*s >= '0' && *s <= '9')
+	{
+		s++;
+		size++;
+		if (size == 19)
+			return (1);
+	}
+	return (0);
+}
+
+int		ft_atoi(const char *s)
 {
 	int	i;
 	int	neg;
@@ -9,20 +32,21 @@ int	ft_atoi(const char *s)
 	i = 0;
 	neg = 1;
 	res = 0;
-	while (s[i] && (s[i] == '\t' || s[i] == '\n' || s[i] == ' '
-			|| s[i] == '\v' || s[i] == '\r' || s[i] == '\f'))
+	while (ft_check_sym(s[i]) == 1)
 		i++;
-	if (s[i] == '-')
+	if (s[i] == '-' || s[i] == '+')
 	{
-		neg = -1;
+		if (s[i] == '-')
+			neg = -1;
 		i++;
 	}
-	else if (s[i] == '+')
-		i++;
+	if (ft_check_size(s + i) != 0)
+	{
+		if (neg == -1)
+			return (0);
+		return (1);
+	}
 	while (s[i] >= '0' && s[i] <= '9')
-	{
-		res = 10 * res + s[i] - '0';
-		i++;
-	}
+		res = 10 * res + s[i++] - '0';
 	return (res * neg);
 }

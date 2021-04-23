@@ -18,7 +18,7 @@ SRCS	= ft_isalnum.c \
 			ft_putendl.c \
 			ft_strlen.c \
 			ft_itoa.c \
-			ft_putnbr_ft.c \
+			ft_putnbr_fd.c \
 			ft_strmapi.c \
 			ft_atoi.c \
 			ft_memccpy.c \
@@ -46,6 +46,8 @@ LIBC	= ar rc
 LIBR	= ranlib
 
 
+.c.o:
+			${CC} ${FLAGS} -c $< -o ${<:.c=.o}
 
 ${NAME}:	${OBJS}
 			${LIBC} ${NAME} ${OBJS}
