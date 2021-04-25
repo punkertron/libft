@@ -2,5 +2,12 @@
 
 t_list	*ft_lstnew(void *content)
 {
-	t_list	join;
+	t_list	*ptr;
+
+	ptr = malloc(sizeof(t_list));
+	if (ptr == 0)
+		return (NULL);
+	ptr->content = content;
+	ptr->next = NULL;
+	return (ptr);
 }

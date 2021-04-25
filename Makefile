@@ -1,4 +1,4 @@
-SRCS	= ft_isalnum.c \
+SRCS	=	ft_isalnum.c \
 			ft_memcpy.c \
 			ft_strdup.c \
 			ft_strtrim.c \
@@ -33,34 +33,53 @@ SRCS	= ft_isalnum.c \
 			ft_strchr.c \
 			ft_strrchr.c 
 
+SRCS_B	=	ft_lstnew.c \
+			ft_lstsize.c \
+			ft_lstlast.c \
+			ft_lstadd_front.c \
+			ft_lstadd_back.c \
+			ft_lstclear.c \
+			ft_lstiter.c \
+			ft_lstmap.c \
+			ft_lstdelone.c
+
+
 HEADER	= libft.h
 
 OBJS	= ${SRCS:.c=.o}
+OBJS_B	= ${SRCS_B:.c=.o}
+
 
 NAME	= libft.a
 
 CC		= gcc
 RM		= rm -f
 CFLAGS	= -Wall -Wextra -Werror
-LIBC	= ar rc
-LIBR	= ranlib
+LIBC	= ar rcs
 
 
-.c.o:
-			${CC} ${FLAGS} -c $< -o ${<:.c=.o}
+
 
 ${NAME}:	${OBJS}
-			${LIBC} ${NAME} ${OBJS}
-			${LIBR} ${NAME}
+			${LIBC} ${NAME} ${OBJS} ${HEADER}
+
 
 all:		${NAME}
 
+
+.c.o:
+			${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
+
+bonus:		${OBJS_B}
+			${LIBC} ${NAME} ${OBJS_B} ${HEADER}
+
+
 clean:
-			${RM} ${OBJS}
+			${RM} ${OBJS} ${OBJS_B}
 
 fclean:		clean
 			${RM} ${NAME}
 
 re:			fclean all
 
-.PHONY:		all clean fclean re
+.PHONY:		all clean fclean re bonus
