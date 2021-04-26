@@ -44,7 +44,6 @@ SRCS_B	=	ft_lstnew.c \
 			ft_lstdelone.c
 
 
-HEADER	= libft.h
 
 OBJS	= ${SRCS:.c=.o}
 OBJS_B	= ${SRCS_B:.c=.o}

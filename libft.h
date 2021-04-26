@@ -41,6 +41,7 @@ int		ft_isascii(int a);
 int		ft_isalpha(int a);
 int		ft_isalnum(int a);
 int		ft_strncmp(const char *str1, const char *str2, size_t n);
+int		ft_memcmp(const void *str1, const void *str2, size_t n);
 
 char	*ft_strdup(const char *src);
 char	*ft_strchr(const char *str, int sym);
