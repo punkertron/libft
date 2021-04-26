@@ -23,7 +23,7 @@ static	int	ft_check_size(const char *s)
 	return (0);
 }
 
-int		ft_atoi(const char *s)
+int	ft_atoi(const char *s)
 {
 	int	i;
 	int	neg;
@@ -44,7 +44,7 @@ int		ft_atoi(const char *s)
 	{
 		if (neg == -1)
 			return (0);
-		return (1);
+		return (-1);
 	}
 	while (s[i] >= '0' && s[i] <= '9')
 		res = 10 * res + s[i++] - '0';

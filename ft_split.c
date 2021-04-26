@@ -42,29 +42,42 @@ static	int	ft_equal(char *b, const char *s, int a, char c)
 	return (a);
 }
 
-char	**ft_split(char const *s, char c)
+static	int	ft_fill_str(char **b, char const *s, char c)
 {
 	int		a;
 	int		i;
-	char	**b;
 
-	b = malloc(sizeof(char *) * (ft_count_word(s, c) + 1));
-	if (b == 0)
-		return (NULL);
 	a = 0;
 	i = 0;
 	while (s[a] != '\0')
-		if (s[a++] != c)
+	{
+		if (s[a] != c)
 		{
 			b[i] = malloc(sizeof(char) * (ft_count_letter(s, a, c) + 1));
 			if (b[i] == 0)
-			{
-				free(b);
-				return (NULL);
-			}
+				return (0);
 			a = ft_equal(b[i++], s, a, c);
 			continue ;
 		}
+		a++;
+	}
 	b[i] = NULL;
+	return (1);
+}
+
+char	**ft_split(char const *s, char c)
+{
+	char	**b;
+
+	if (s == NULL)
+		return (NULL);
+	b = malloc(sizeof(char *) * (ft_count_word(s, c) + 1));
+	if (b == 0)
+		return (NULL);
+	if (ft_fill_str(b, s, c) == 0)
+	{
+		free(b);
+		return (NULL);
+	}
 	return (b);
 }

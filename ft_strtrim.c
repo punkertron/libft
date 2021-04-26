@@ -14,6 +14,31 @@ static	int	ft_check(char const s1, char const *set)
 	return (0);
 }
 
+static	int	ft_count(char const *s1, char const *set)
+{
+	int	a;
+	int	count;
+
+	a = 0;
+	count = 0;
+	while (s1[a] && ft_check(s1[a], set) == 1)
+	{
+		a++;
+		count++;
+		if (!s1[a])
+			return (count);
+	}
+	while (s1[a])
+		a++;
+	a = a - 1;
+	while (ft_check(s1[a], set) == 1)
+	{
+		a--;
+		count++;
+	}
+	return (count);
+}
+
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	char	*dest;
@@ -22,7 +47,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 	a = 0;
 	l = 0;
-	dest = malloc(sizeof(char) * (ft_strlen(s1) + 1));
+	dest = malloc(sizeof(char) * (ft_strlen(s1) - ft_count(s1, set) + 1));
 	if (dest == 0)
 		return (NULL);
 	while (s1 && ft_check(s1[a], set) == 1)

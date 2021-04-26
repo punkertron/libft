@@ -11,7 +11,7 @@ char	*ft_strnstr (const char *big, const char *little, size_t len)
 	quantity = ft_strlen(little);
 	a = 0;
 	if (little[0] == '\0')
-		return (b);	
+		return (b);
 	while (a < len && b[a] != '\0')
 	{
 		count = 0;

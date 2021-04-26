@@ -1,6 +1,6 @@
 #include "libft.h"
 
-static	int		ft_count(int n)
+static	int	ft_count(int n)
 {
 	int				count;
 	long long int	l;
@@ -54,7 +54,7 @@ char	*ft_itoa(int n)
 	char			*s;
 	long long int	q;
 
-	s = malloc(sizeof(s) * (ft_count(n) + 1));
+	s = malloc(sizeof(char) * (ft_count(n) + 1));
 	if (s == 0)
 		return (NULL);
 	q = n;

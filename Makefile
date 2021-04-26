@@ -15,7 +15,7 @@ SRCS	=	ft_isalnum.c \
 			ft_strlcpy.c \
 			ft_toupper.c \
 			ft_isprint.c \
-			ft_putendl.c \
+			ft_putendl_fd.c \
 			ft_strlen.c \
 			ft_itoa.c \
 			ft_putnbr_fd.c \
@@ -60,11 +60,11 @@ LIBC	= ar rcs
 
 
 
-${NAME}:	${OBJS}
+$(NAME):	${OBJS}
 			${LIBC} ${NAME} ${OBJS} ${HEADER}
 
 
-all:		${NAME}
+all:		$(NAME)
 
 
 .c.o:
