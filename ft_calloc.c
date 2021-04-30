@@ -7,6 +7,6 @@ void	*ft_calloc(size_t num, size_t size)
 	res = malloc(num * size);
 	if (res == 0)
 		return (NULL);
-	ft_bzero(res, num);
+	ft_bzero(res, num * size);
 	return (res);
 }

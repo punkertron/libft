@@ -2,7 +2,7 @@
 
 size_t	ft_strlen(const char *s)
 {
-	int		i;
+	size_t	i;
 	char	*s1;
 
 	s1 = (char *)s;

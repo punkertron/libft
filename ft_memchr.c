@@ -12,7 +12,7 @@ void	*ft_memchr(const void *buf, int c, size_t n)
 	while (a < n)
 	{
 		if (buf2[a] == f)
-			return ((void *)buf + a);
+			return ((void *)(buf + a));
 		a++;
 	}
 	return (NULL);

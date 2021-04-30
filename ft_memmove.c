@@ -17,5 +17,5 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	else
 		while (++a < n)
 			d1[a] = s1[a];
-	return (d1);
+	return (dest);
 }

@@ -60,7 +60,7 @@ LIBC	= ar rcs
 
 
 $(NAME):	${OBJS}
-			${LIBC} ${NAME} ${OBJS} ${HEADER}
+			${LIBC} ${NAME} ${OBJS}
 
 
 all:		$(NAME)
@@ -70,7 +70,7 @@ all:		$(NAME)
 			${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
 
 bonus:		${OBJS_B}
-			${LIBC} ${NAME} ${OBJS_B} ${HEADER}
+			${LIBC} ${NAME} ${OBJS_B}
 
 
 clean:

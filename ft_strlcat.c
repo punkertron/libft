@@ -8,11 +8,11 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	size_t	k1;
 
 	l = 0;
+	if (!dst || !src)
+		return (0);
 	q = ft_strlen(src);
 	k = ft_strlen(dst);
 	k1 = k;
-	if (!dst || !src)
-		return (0);
 	if (size <= k)
 		return (q + size);
 	while (src[l] != '\0' && (l + k1) < size - 1)

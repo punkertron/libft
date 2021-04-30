@@ -44,23 +44,21 @@ char	*ft_strtrim(char const *s1, char const *set)
 	char	*dest;
 	int		a;
 	int		l;
+	int		q;
 
 	a = 0;
 	l = 0;
-	dest = malloc(sizeof(char) * (ft_strlen(s1) - ft_count(s1, set) + 1));
+	q = ft_strlen(s1) - ft_count(s1, set);
+	dest = malloc(sizeof(char) * (q + 1));
 	if (dest == 0)
 		return (NULL);
 	while (s1 && ft_check(s1[a], set) == 1)
 		a++;
-	while (s1[a])
+	while (s1[a] && l < q)
 	{
 		dest[l] = s1[a];
 		a++;
 		l++;
-	}
-	while (l > 0 && ft_check(dest[l - 1], set) == 1)
-	{
-		l--;
 	}
 	dest[l] = '\0';
 	return (dest);

@@ -5,8 +5,6 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	t_list	*ptr;
 	t_list	*first;
 
-	if (!lst || !f || !del)
-		return (NULL);
 	ptr = ft_lstnew((*f)(lst->content));
 	if (ptr == 0)
 		return (NULL);

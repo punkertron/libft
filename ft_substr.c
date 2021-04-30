@@ -10,10 +10,12 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		return (NULL);
 	if (ft_strlen(s) < start)
 		return (ft_strdup(""));
+	if ((ft_strlen(s) - start) < len)
+		len = ft_strlen(s) - start;
 	dest = malloc(sizeof(char) * (len + 1));
 	if (dest == 0)
 		return (NULL);
-	while (s[a] && a < len)
+	while (s[start] && a < len)
 	{
 		dest[a] = s[start];
 		a++;
