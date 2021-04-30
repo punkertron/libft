@@ -64,7 +64,11 @@ static	int	ft_fill_str(char **b, char const *s, char c)
 		{
 			b[i] = malloc(sizeof(char) * (ft_count_letter(s, a, c) + 1));
 			if (b[i] == 0)
+			{
+				while (i >= 0)
+					free(b[--i]);
 				return (0);
+			}
 			a = ft_equal(b[i++], s, a, c);
 			continue ;
 		}
